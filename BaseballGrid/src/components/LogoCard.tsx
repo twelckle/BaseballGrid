@@ -1,13 +1,16 @@
-import React from "react";
 import { Logo } from "../data/logoImages";
-import { Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 
 interface Props {
   image: Logo;
 }
 
 const LogoCard = ({ image }: Props) => {
-  return <Image src={image.image} alt={image.name} />;
+  return (
+    <Box display="flex" justifyContent="center" alignItems="center">
+      <Image boxSize="80px" src={image.image} alt={image.name} />
+    </Box>
+  );
 };
 
 export default LogoCard;

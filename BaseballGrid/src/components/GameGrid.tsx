@@ -1,15 +1,26 @@
-import { Box, SimpleGrid, grid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import GameCard from "./GameCard";
 import { gridNumbers, gridComponent } from "../data/gridNumbers";
 import LogoCard from "./LogoCard";
-import { Logo, logos } from "../data/logoImages";
+import { logos } from "../data/logoImages";
+import { useRef } from "react";
 
-const GameGrid = () => {
+interface Props {
+  teamsUsed: number[];
+}
+
+const GameGrid = ({ teamsUsed }: Props) => {
   const logoOrButton = ({ location }: gridComponent) => {
-    if (location[0] === 0 || location[1] === 0)
-      return <LogoCard image={logos[0]}></LogoCard>;
-    else return <GameCard></GameCard>;
+    if (location[0] === 0 || location[1] === 0) {
+      if (location[0] === 0 && location[1] === 0) return <Box></Box>;
+      else {
+        counter.current += 1;
+        return <LogoCard image={logos[teamsUsed[counter.current]]}></LogoCard>;
+      }
+    } else return <GameCard></GameCard>;
   };
+  const counter = useRef(-1);
+
   return (
     <Box
       display="flex"

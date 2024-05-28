@@ -1,3 +1,16 @@
+
+export const generateUniqueRandomNumbers = () => {
+    const numbers = new Set<number>();
+  
+    while (numbers.size < 6) {
+      const randomNumber = Math.floor(Math.random() * 30);
+      numbers.add(randomNumber);
+    }
+  
+    return Array.from(numbers);
+  };
+  
+
 export interface gridComponent {
     location: number[];
 }
