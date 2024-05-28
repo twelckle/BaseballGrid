@@ -1,0 +1,25 @@
+/* SearchPlayer.css */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000; /* Ensure it is on top */
+  }
+
+
+  .input-container {
+    pointer-events: all; /* Make the input container interactive */
+    position: relative;
+    z-index: 1001; /* Ensure it is above the overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust this width as needed */
+  }
+  
