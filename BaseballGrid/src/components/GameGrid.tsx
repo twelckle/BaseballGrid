@@ -28,6 +28,7 @@ const GameGrid = ({ teamsUsed }: Props) => {
           <LogoCard
             key={`${location[0]}-${location[1]}`}
             image={logos[teamsUsed[counter]]}
+            gridComponent={gridComponent}
           ></LogoCard>
         );
       }
