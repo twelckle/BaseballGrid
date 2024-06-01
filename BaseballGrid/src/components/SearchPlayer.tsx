@@ -7,13 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { ChangeEventHandler, useEffect, useRef, useState } from "react";
 import { BsSearch } from "react-icons/bs";
-
-interface Player {
-  name: string;
-  years: string;
-  teams: string[];
-  picture: string;
-}
+import DisplayPlayer from "./DisplayPlayer";
 
 interface Props {
   onClose: () => void;
@@ -24,9 +18,6 @@ const SearchPlayer = ({ onClose }: Props) => {
   const searchBarRef = useRef<HTMLInputElement>(null);
   const [isTyping, setIsTyping] = useState(false);
   const [typed, setTyped] = useState("");
-  const [playersNames, setPlayersNames] = useState({} as Player);
-
-  const getPlayersNames = () => {};
 
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -39,9 +30,7 @@ const SearchPlayer = ({ onClose }: Props) => {
     const { value } = event.target;
     setIsTyping(value.length > 0);
     setTyped(value);
-    if (isTyping) {
-      getPlayersNames;
-    }
+    console.log(value);
   };
 
   useEffect(() => {
@@ -57,12 +46,13 @@ const SearchPlayer = ({ onClose }: Props) => {
   return (
     <div className="overlay">
       <div className="input-container" ref={ref}>
-        <form>
+        <form onSubmit={(event) => event.preventDefault()}>
           <VStack align="stretch" marginTop={"100px"}>
-            <Box mx="auto" borderWidth={4} width={"100%"} maxWidth={"1200px"}>
+            <Box mx="auto" width={"100%"} maxWidth={"1200px"}>
               <InputGroup>
                 <InputLeftElement children={<BsSearch />}></InputLeftElement>
                 <Input
+                  borderRadius="10px"
                   placeholder="Search Player"
                   variant="blue"
                   size="lg"
@@ -71,24 +61,7 @@ const SearchPlayer = ({ onClose }: Props) => {
                 />
               </InputGroup>
             </Box>
-            {isTyping && (
-              <Box h="50px" bg="tomato">
-                {" "}
-                1{" "}
-              </Box>
-            )}
-            {isTyping && (
-              <Box h="50px" bg="tomato">
-                {" "}
-                2{" "}
-              </Box>
-            )}
-            {isTyping && (
-              <Box h="45px" bg="tomato">
-                {" "}
-                3{" "}
-              </Box>
-            )}
+            {isTyping && <DisplayPlayer userInput={typed} />}
           </VStack>
         </form>
       </div>
