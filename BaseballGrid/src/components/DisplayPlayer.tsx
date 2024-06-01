@@ -3,6 +3,10 @@ import { Box, Button, HStack } from "@chakra-ui/react";
 // import {Team, Split, PlayerStats, Player, People} from "../hooks/getPlayer";
 import { Player } from "../hooks/getPlayer";
 import getPlayerYears from "../data/getPlayerInfo";
+import { useContext } from "react";
+import { AppContext } from "./GameGrid";
+import getTeams from "../data/getTeams";
+import useUpdatedGameGrid from "../hooks/useUpdatedGameGrid";
 
 interface Props {
   userInput: string;
@@ -10,6 +14,11 @@ interface Props {
 
 const DisplayPlayer = ({ userInput }: Props) => {
   const { playerInfo, error, isLoading } = getPlayer({ userInput });
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error("GameCard must be used within an AppContext.Provider");
+  }
+  const { gameState, setGameState } = context;
 
   if (isLoading) {
     return (
@@ -52,6 +61,19 @@ const DisplayPlayer = ({ userInput }: Props) => {
       </Box>
     );
   }
+
+  const selectPlayer = (player: Player) => {
+    const teams = getTeams(player);
+    console.log(teams);
+    setGameState({
+      ...gameState,
+      search: false,
+      finish: false,
+      playerIDSelected: player.id,
+      playerName: player.fullName,
+      teams: teams,
+    });
+  };
   return (
     <>
       <Box overflowY="auto" maxHeight="400px" borderRadius="10px">
@@ -76,6 +98,9 @@ const DisplayPlayer = ({ userInput }: Props) => {
                   _hover={{
                     backgroundColor: "#26f326",
                     color: "white",
+                  }}
+                  onClick={() => {
+                    selectPlayer(player);
                   }}
                 >
                   Select

@@ -2,31 +2,7 @@ import "./App.css";
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
 import { generateUniqueRandomNumbers } from "./data/gridNumbers";
-import { useEffect, useState } from "react";
-import axios from "axios";
-
-interface Team {
-  name: string;
-}
-
-interface Split {
-  season: string;
-  team: Team;
-}
-
-interface PlayerStats {
-  splits: Split[];
-}
-
-// Example interface for the overall player, including stats
-interface Player {
-  id: number;
-  fullName: string;
-  stats: PlayerStats[];
-}
-interface People {
-  people: Player[];
-}
+import { createContext } from "react";
 
 function App() {
   const teamsUsed = generateUniqueRandomNumbers();

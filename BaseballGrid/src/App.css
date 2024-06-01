@@ -15,11 +15,4 @@
 
   .input-container {
     width: 60%
-    /* pointer-events: all; Make the input container interactive */
-    /* position: relative; */
-    /* z-index: 1001; Ensure it is above the overlay */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* width: 500%; Adjust this width as needed */
   }
