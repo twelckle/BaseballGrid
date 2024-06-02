@@ -1,5 +1,3 @@
-import { FaLetterboxd } from "react-icons/fa6";
-import { LiaEthernetSolid } from "react-icons/lia";
 
 export const generateUniqueRandomNumbers = () => {
     const numbers = new Set<number>();

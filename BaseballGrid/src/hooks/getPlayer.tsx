@@ -40,7 +40,6 @@ export const getPlayer = ({ userInput }: Props) => {
 
   useEffect(() => {
     // Fetch data from the API and update the state
-    const source = axios.CancelToken.source();
 
     setLoading(true);
     const controller = new AbortController();

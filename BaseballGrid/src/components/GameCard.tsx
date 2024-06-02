@@ -1,6 +1,5 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { AppContext, GameState } from "./GameGrid";
-import { gridComponent } from "../data/gridNumbers";
 import { useContext } from "react";
 
 interface Props {
@@ -14,7 +13,7 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
   if (!context) {
     throw new Error("GameCard must be used within an AppContext.Provider");
   }
-  const { gameState, setGameState } = context;
+  const { gameState } = context;
   const handleClick = () => {
     const newState: GameState = {
       ...gameState,
@@ -40,7 +39,7 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
   return (
     <div>
       {imageShown !== "" ? (
-        <Box height="100px" width="100px" position="relative">
+        <Box height="150px" width="150px" position="relative">
           <Image
             src={imageShown}
             objectFit={"contain"}
@@ -70,9 +69,9 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
         </Box>
       ) : (
         <Box
-          bg={searchBox === spot ? "yellow" : "tomato"}
-          height="100px"
-          width="100px"
+          bg={searchBox === spot ? "yellow" : "#8c8c8c"}
+          height="150px"
+          width="150px"
           as={Button}
           borderRadius={0}
           onClick={handleClick}

@@ -1,9 +1,37 @@
 import React, { useEffect } from "react";
 import { GameState } from "../components/GameGrid";
+import locationMapping, { logos } from "../data/logoImages";
+
+const playedOnThoseteams = (
+  teamsUsed: number[],
+  gameState: GameState,
+  i: number
+): boolean => {
+  console.log("here" + gameState.grid[i].location);
+  const teamLocations = locationMapping.get(
+    JSON.stringify(gameState.grid[i].location)
+  );
+  console.log(teamLocations);
+  if (teamLocations === undefined) return false;
+  const teamOne = logos[teamsUsed[teamLocations[0]]].name;
+  const teamTwo = logos[teamsUsed[teamLocations[1]]].name;
+  console.log(teamOne);
+  console.log(teamTwo);
+  let count = 0;
+  for (let i = 0; i < gameState.teams.length; i++) {
+    console.log(gameState.teams[i]);
+    if (gameState.teams[i] == teamOne || gameState.teams[i] == teamTwo) {
+      count++;
+    }
+  }
+
+  return count === 2;
+};
 
 const useUpdatedGameGrid = (
   gameState: GameState,
-  setGameState: React.Dispatch<React.SetStateAction<GameState>>
+  setGameState: React.Dispatch<React.SetStateAction<GameState>>,
+  teamsUsed: number[]
 ) => {
   useEffect(() => {
     let updatedPicture = "";
@@ -12,12 +40,14 @@ const useUpdatedGameGrid = (
     if (gameState.playerIDSelected === null) return;
     for (let i = 0; i < 16; i++) {
       if (gameState.grid[i].location === gameState.searchBox) {
-        updatedPicture =
-          "https://img.mlbstatic.com/mlb-photos/image/upload/w_300,q_auto:best/v1/people/" +
-          gameState.playerIDSelected +
-          "/headshot/67/current";
-        updatedLocation = i;
-        updatedName = gameState.playerName;
+        if (playedOnThoseteams(teamsUsed, gameState, i)) {
+          updatedPicture =
+            "https://img.mlbstatic.com/mlb-photos/image/upload/w_300,q_auto:best/v1/people/" +
+            gameState.playerIDSelected +
+            "/headshot/67/current";
+          updatedLocation = i;
+          updatedName = gameState.playerName;
+        }
         break;
       }
     }

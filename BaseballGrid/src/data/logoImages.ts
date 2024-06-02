@@ -34,35 +34,51 @@ export interface Logo {
     image: string;
 }
 
+// Define the Map with string keys and array values
+const locationMapping: Map<string, number[]> = new Map<string, number[]>();
+
+// Populate the map using stringified keys
+locationMapping.set(JSON.stringify([1, 1]), [0, 3]);
+locationMapping.set(JSON.stringify([2, 1]), [1, 3]);
+locationMapping.set(JSON.stringify([3, 1]), [2, 3]);
+locationMapping.set(JSON.stringify([1, 2]), [0, 4]);
+locationMapping.set(JSON.stringify([2, 2]), [1, 4]);
+locationMapping.set(JSON.stringify([3, 2]), [2, 4]);
+locationMapping.set(JSON.stringify([1, 3]), [0, 5]);
+locationMapping.set(JSON.stringify([2, 3]), [1, 5]);
+locationMapping.set(JSON.stringify([3, 3]), [2, 5]);
+
+export default locationMapping;
+
 export const logos: Logo[] = [
-    {name: 'angels', image: angels},
-    {name: 'astros', image: astros},
-    {name: 'athletics', image: athletics},
-    {name: 'bluejays', image: bluejays},
-    {name: 'braves', image: braves},
-    {name: 'brewers', image: brewers},
-    {name: 'cardinals', image: cardinals},
-    {name: 'cubs', image: cubs},
-    {name: 'diamondbacks', image: diamondbacks},
-    {name: 'dodgers', image: dodgers},
-    {name: 'giants', image: giants},
-    {name: 'guardians', image: guardians},
-    {name: 'mariners', image: mariners},
-    {name: 'marlins', image: marlins},
-    {name: 'mets', image: mets},
-    {name: 'nationals', image: nationals},
-    {name: 'orioles', image: orioles},
-    {name: 'padres', image: padres},
-    {name: 'phillies', image: phillies},
-    {name: 'pirates', image: pirates},
-    {name: 'rangers', image: rangers},
-    {name: 'rays', image: rays},
-    {name: 'redsox', image: redsox},
-    {name: 'reds', image: reds},
-    {name: 'rockies', image: rockies},
-    {name: 'royals', image: royals},
-    {name: 'tigers', image: tigers},
-    {name: 'twins', image: twins},
-    {name: 'white_sox', image: white_sox},
-    {name: 'yankees', image: yankees}
+    { name: 'Los Angeles Angels', image: angels },
+  { name: 'Houston Astros', image: astros },
+  { name: 'Oakland Athletics', image: athletics },
+  { name: 'Toronto Blue Jays', image: bluejays },
+  { name: 'Atlanta Braves', image: braves },
+  { name: 'Milwaukee Brewers', image: brewers },
+  { name: 'St. Louis Cardinals', image: cardinals },
+  { name: 'Chicago Cubs', image: cubs },
+  { name: 'Arizona Diamondbacks', image: diamondbacks },
+  { name: 'Los Angeles Dodgers', image: dodgers },
+  { name: 'San Francisco Giants', image: giants },
+  { name: 'Cleveland Guardians', image: guardians },
+  { name: 'Seattle Mariners', image: mariners },
+  { name: 'Miami Marlins', image: marlins },
+  { name: 'New York Mets', image: mets },
+  { name: 'Washington Nationals', image: nationals },
+  { name: 'Baltimore Orioles', image: orioles },
+  { name: 'San Diego Padres', image: padres },
+  { name: 'Philadelphia Phillies', image: phillies },
+  { name: 'Pittsburgh Pirates', image: pirates },
+  { name: 'Texas Rangers', image: rangers },
+  { name: 'Tampa Bay Rays', image: rays },
+  { name: 'Boston Red Sox', image: redsox },
+  { name: 'Cincinnati Reds', image: reds },
+  { name: 'Colorado Rockies', image: rockies },
+  { name: 'Kansas City Royals', image: royals },
+  { name: 'Detroit Tigers', image: tigers },
+  { name: 'Minnesota Twins', image: twins },
+  { name: 'Chicago White Sox', image: white_sox },
+  { name: 'New York Yankees', image: yankees }
 ]

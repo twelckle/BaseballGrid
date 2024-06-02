@@ -6,7 +6,6 @@ import getPlayerYears from "../data/getPlayerInfo";
 import { useContext } from "react";
 import { AppContext } from "./GameGrid";
 import getTeams from "../data/getTeams";
-import useUpdatedGameGrid from "../hooks/useUpdatedGameGrid";
 
 interface Props {
   userInput: string;

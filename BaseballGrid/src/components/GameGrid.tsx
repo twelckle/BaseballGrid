@@ -40,7 +40,7 @@ const GameGrid = ({ teamsUsed }: Props) => {
     grid: gridNumbers,
   });
 
-  useUpdatedGameGrid(gameState, setGameState);
+  useUpdatedGameGrid(gameState, setGameState, teamsUsed);
 
   //   console.log(gameState.playerIDSelected);
   //   console.log(gameState.teams);
@@ -102,7 +102,7 @@ const GameGrid = ({ teamsUsed }: Props) => {
             columns={4}
             rowGap="1px"
             spacing={1}
-            maxW="400px"
+            maxW="600px"
             w="100%"
           >
             {gameState.grid.map((item) => logoOrButton(item))}
