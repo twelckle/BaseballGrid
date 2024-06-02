@@ -18,7 +18,11 @@ const LogoCard = ({ gridComponent, image }: Props) => {
         marginRight: gridComponent.location[0] === 0 ? "20px" : undefined,
       }}
     >
-      <Image boxSize="100px" src={image.image} alt={image.name} />
+      <Image
+        boxSize={{ base: "40px", sm: "66px", lg: "100px" }}
+        src={image.image}
+        alt={image.name}
+      />
     </Box>
   );
 };

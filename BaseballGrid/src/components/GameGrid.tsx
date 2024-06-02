@@ -100,9 +100,9 @@ const GameGrid = ({ teamsUsed }: Props) => {
         <div className="main-content">
           <SimpleGrid
             columns={4}
-            rowGap="1px"
-            spacing={1}
-            maxW="600px"
+            columnGap={"1px"}
+            rowGap={"1px"}
+            maxW={{ base: "261px", sm: "363px", lg: "800px" }}
             w="100%"
           >
             {gameState.grid.map((item) => logoOrButton(item))}

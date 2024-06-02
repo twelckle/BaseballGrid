@@ -12,7 +12,7 @@ function App() {
         templateAreas={`'header'
             'main'`}
         gridTemplateColumns={"1fr"}
-        gridTemplateRows={"auto 1fr"}
+        gridTemplateRows={{ base: "1fr", lg: "50px 1fr" }}
         height="100vh"
         width="100vw"
       >

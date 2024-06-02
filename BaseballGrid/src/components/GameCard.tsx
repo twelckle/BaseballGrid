@@ -39,7 +39,11 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
   return (
     <div>
       {imageShown !== "" ? (
-        <Box height="150px" width="150px" position="relative">
+        <Box
+          height={{ base: "65px", sm: "80px", lg: "150px" }}
+          width={{ base: "65px", sm: "80px", lg: "150px" }}
+          position="relative"
+        >
           <Image
             src={imageShown}
             objectFit={"contain"}
@@ -70,8 +74,8 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
       ) : (
         <Box
           bg={searchBox === spot ? "yellow" : "#8c8c8c"}
-          height="150px"
-          width="150px"
+          height={{ base: "65px", sm: "90px", lg: "150px" }}
+          width={{ base: "65px", sm: "90px", lg: "150px" }}
           as={Button}
           borderRadius={0}
           onClick={handleClick}
