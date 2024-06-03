@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { GameState } from "../components/GameGrid";
 import locationMapping, { logos } from "../data/logoImages";
+import { currentTeams } from "../data/getTeams";
 
 const playedOnThoseteams = (
   teamsUsed: number[],
@@ -20,7 +21,8 @@ const playedOnThoseteams = (
   let count = 0;
   for (let i = 0; i < gameState.teams.length; i++) {
     console.log(gameState.teams[i]);
-    if (gameState.teams[i] == teamOne || gameState.teams[i] == teamTwo) {
+    const checkingTeam = currentTeams(gameState.teams[i]);
+    if (checkingTeam == teamOne || checkingTeam == teamTwo) {
       count++;
     }
   }
@@ -37,6 +39,7 @@ const useUpdatedGameGrid = (
     let updatedPicture = "";
     let updatedLocation = -1;
     let updatedName = "";
+    let correctGuess = 0;
     if (gameState.playerIDSelected === null) return;
     for (let i = 0; i < 20; i++) {
       if (gameState.grid[i].location === gameState.searchBox) {
@@ -47,6 +50,7 @@ const useUpdatedGameGrid = (
             "/headshot/67/current";
           updatedLocation = i;
           updatedName = gameState.playerName;
+          correctGuess = 1;
         }
         break;
       }
@@ -59,7 +63,12 @@ const useUpdatedGameGrid = (
       return cell;
     });
 
-    setGameState({ ...gameState, searchBox: [0, 0], grid: updatedGrid });
+    setGameState({
+      ...gameState,
+      correctGuesses: gameState.correctGuesses + correctGuess,
+      searchBox: [0, 0],
+      grid: updatedGrid,
+    });
   }, [gameState.playerIDSelected]);
 
   return {};

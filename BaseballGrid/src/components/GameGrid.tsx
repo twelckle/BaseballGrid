@@ -7,6 +7,7 @@ import { logos } from "../data/logoImages";
 import SearchPlayer from "./SearchPlayer";
 import useUpdatedGameGrid from "../hooks/useUpdatedGameGrid";
 import GuessesLeftGrid from "./GuessesLeftGrid";
+import EndGameCard from "./EndGameCard";
 
 interface Props {
   teamsUsed: number[];
@@ -21,6 +22,7 @@ export interface GameState {
   teams: string[];
   grid: gridComponent[];
   numberGuesses: number;
+  correctGuesses: number;
 }
 
 interface AppContextType {
@@ -43,6 +45,7 @@ const GameGrid = ({ teamsUsed }: Props) => {
     teams: [],
     grid: gridNumbers,
     numberGuesses: 9,
+    correctGuesses: 0,
   });
 
   useUpdatedGameGrid(gameState, setGameState, teamsUsed);
@@ -102,6 +105,7 @@ const GameGrid = ({ teamsUsed }: Props) => {
 
   return (
     <AppContext.Provider value={{ gameState, setGameState }}>
+      {gameState.finish && <EndGameCard></EndGameCard>}
       <Box
         display="flex"
         justifyContent="center"

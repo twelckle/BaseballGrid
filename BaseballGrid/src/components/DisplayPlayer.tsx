@@ -63,11 +63,12 @@ const DisplayPlayer = ({ userInput }: Props) => {
 
   const selectPlayer = (player: Player) => {
     const teams = getTeams(player);
-    console.log(teams);
+    let endGame = false;
+    if (gameState.numberGuesses === 1) endGame = true;
     setGameState({
       ...gameState,
       search: false,
-      finish: false,
+      finish: endGame,
       playerIDSelected: player.id,
       playerName: player.fullName,
       teams: teams,
