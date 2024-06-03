@@ -62,6 +62,7 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
               overflow="hidden"
               whiteSpace="nowrap"
               lineHeight="15px"
+              color={"white"}
             >
               {nameShown}
             </Text>

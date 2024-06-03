@@ -1,5 +1,5 @@
 import getPlayer from "../hooks/getPlayer";
-import { Box, Button, HStack } from "@chakra-ui/react";
+import { Box, Button, HStack, Text } from "@chakra-ui/react";
 // import {Team, Split, PlayerStats, Player, People} from "../hooks/getPlayer";
 import { Player } from "../hooks/getPlayer";
 import getPlayerYears from "../data/getPlayerInfo";
@@ -28,7 +28,7 @@ const DisplayPlayer = ({ userInput }: Props) => {
         paddingTop={"12px"}
         borderRadius="10px"
       >
-        Loading...
+        <Text color="white">Loading...</Text>
       </Box>
     );
   }
@@ -56,7 +56,7 @@ const DisplayPlayer = ({ userInput }: Props) => {
         paddingTop={"12px"}
         borderRadius="10px"
       >
-        No player information available
+        <Text color="white">No player information available</Text>
       </Box>
     );
   }
@@ -88,9 +88,9 @@ const DisplayPlayer = ({ userInput }: Props) => {
               _hover={{ bg: "#b37300" }}
             >
               <HStack justifyContent="space-between">
-                <>
+                <Text color="white">
                   {player.fullName} | {getPlayerYears(player)}
-                </>
+                </Text>
                 <Button
                   marginRight="15px"
                   color="#26f326"

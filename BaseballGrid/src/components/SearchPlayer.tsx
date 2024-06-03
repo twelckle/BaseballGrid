@@ -48,7 +48,10 @@ const SearchPlayer = ({ onClose }: Props) => {
           <VStack align="stretch" marginTop={"100px"}>
             <Box mx="auto" width={"100%"} maxWidth={"1200px"}>
               <InputGroup>
-                <InputLeftElement children={<BsSearch />}></InputLeftElement>
+                <InputLeftElement
+                  color="grey"
+                  children={<BsSearch />}
+                ></InputLeftElement>
                 <Input
                   borderRadius="10px"
                   placeholder="Search Player"
@@ -56,6 +59,8 @@ const SearchPlayer = ({ onClose }: Props) => {
                   size="lg"
                   ref={searchBarRef}
                   onChange={handleTyping}
+                  backgroundColor="white"
+                  color={"grey"}
                 />
               </InputGroup>
             </Box>
