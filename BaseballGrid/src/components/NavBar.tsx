@@ -1,10 +1,10 @@
-import { Box, HStack, Link, Text } from "@chakra-ui/react";
-import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { Box, HStack, Link, Text, Image } from "@chakra-ui/react";
 import { LiaDonateSolid } from "react-icons/lia";
 import { FaGithub } from "react-icons/fa";
 import { GrHelpBook } from "react-icons/gr";
 import HelpDisplay from "./HelpDisplay";
 import { useState } from "react";
+import logo from "../assets/baseball-favicon.png";
 
 const NavBar = () => {
   const iconsColor = "#4d9968";
@@ -19,7 +19,8 @@ const NavBar = () => {
               width={{ base: "15px", sm: "45px", md: "45px", lg: "55px" }}
               height={{ base: "15px", sm: "45px", md: "45px", lg: "55px" }}
             >
-              <BsFillGrid3X3GapFill size="100%" color={iconsColor} />
+              <Image src={logo} />
+              <Image></Image>
             </Box>
             <Text
               fontFamily="Roboto, sans-serif"
@@ -27,6 +28,7 @@ const NavBar = () => {
               fontWeight="bold"
               overflowWrap="normal"
               whiteSpace="nowrap"
+              color={"white"}
             >
               BASEBALL GRID
             </Text>

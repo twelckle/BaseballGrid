@@ -21,6 +21,7 @@ const GuessesLeftGrid = () => {
           align="center"
           fontSize={{ base: "xs", sm: "l", md: "xl", lg: "2xl" }}
           fontFamily="Roboto"
+          color={"white"}
         >
           Number of Guesses
         </Text>
@@ -29,6 +30,7 @@ const GuessesLeftGrid = () => {
           fontSize={{ base: "1xl", sm: "2xl", md: "3xl", lg: "4xl" }}
           as="b"
           align="center"
+          color={"white"}
         >
           {gameState.numberGuesses}
         </Text>
