@@ -6,6 +6,7 @@ import LogoCard from "./LogoCard";
 import { logos } from "../data/logoImages";
 import SearchPlayer from "./SearchPlayer";
 import useUpdatedGameGrid from "../hooks/useUpdatedGameGrid";
+import GuessesLeftGrid from "./GuessesLeftGrid";
 
 interface Props {
   teamsUsed: number[];
@@ -19,6 +20,7 @@ export interface GameState {
   playerName: string;
   teams: string[];
   grid: gridComponent[];
+  numberGuesses: number;
 }
 
 interface AppContextType {
@@ -28,6 +30,8 @@ interface AppContextType {
 
 export const AppContext = createContext<AppContextType | null>(null);
 
+//sizes of the boxes for the grid items
+export const sizes = { base: "55px", sm: "75px", md: "134px", lg: "150px" };
 const GameGrid = ({ teamsUsed }: Props) => {
   console.log(teamsUsed);
   const [gameState, setGameState] = useState<GameState>({
@@ -38,29 +42,39 @@ const GameGrid = ({ teamsUsed }: Props) => {
     playerName: "",
     teams: [],
     grid: gridNumbers,
+    numberGuesses: 9,
   });
 
   useUpdatedGameGrid(gameState, setGameState, teamsUsed);
 
-  //   console.log(gameState.playerIDSelected);
-  //   console.log(gameState.teams);
-  console.log(gameState.grid);
+  const returnEmpty = (location: number[]) => {
+    if (location[0] === 0 && location[1] === 0) {
+      return true;
+    }
+    if (location[0] === 4 && location[1] !== 2) {
+      return true;
+    }
+    return false;
+  };
 
   const logoOrButton = (gridComponent: gridComponent) => {
     const location = gridComponent.location;
-    if (location[0] === 0 || location[1] === 0) {
-      if (location[0] === 0 && location[1] === 0)
-        return <Box key={`${location[0]}-${location[1]}`}></Box>;
-      else {
-        counter += 1;
-        return (
-          <LogoCard
-            key={`${location[0]}-${location[1]}`}
-            image={logos[teamsUsed[counter]]}
-            gridComponent={gridComponent}
-          ></LogoCard>
-        );
-      }
+    if (returnEmpty(location))
+      return <Box key={`${location[0]}-${location[1]}`}></Box>;
+    else if (location[0] === 4 && location[1] === 2)
+      return (
+        <GuessesLeftGrid
+          key={`${location[0]}-${location[1]}`}
+        ></GuessesLeftGrid>
+      );
+    else if (location[0] === 0 || location[1] === 0) {
+      counter += 1;
+      return (
+        <LogoCard
+          key={`${location[0]}-${location[1]}`}
+          image={logos[teamsUsed[counter]]}
+        ></LogoCard>
+      );
     } else
       return (
         <GameCard
@@ -99,10 +113,11 @@ const GameGrid = ({ teamsUsed }: Props) => {
         {gameState.search && <SearchPlayer onClose={onClose} />}
         <div className="main-content">
           <SimpleGrid
-            columns={4}
+            columns={5}
             columnGap={"1px"}
             rowGap={"1px"}
-            maxW={{ base: "261px", sm: "363px", lg: "800px" }}
+            maxW={{ base: "279px", sm: "379px", md: "674px", lg: "754px" }} //4 for padding
+            maxH={{ base: "223px", sm: "303px", md: "539px", lg: "603px" }} //3 for padding
             w="100%"
           >
             {gameState.grid.map((item) => logoOrButton(item))}

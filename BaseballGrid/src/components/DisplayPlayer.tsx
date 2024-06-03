@@ -71,6 +71,7 @@ const DisplayPlayer = ({ userInput }: Props) => {
       playerIDSelected: player.id,
       playerName: player.fullName,
       teams: teams,
+      numberGuesses: gameState.numberGuesses - 1,
     });
   };
   return (

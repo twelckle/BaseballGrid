@@ -38,7 +38,7 @@ const useUpdatedGameGrid = (
     let updatedLocation = -1;
     let updatedName = "";
     if (gameState.playerIDSelected === null) return;
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 20; i++) {
       if (gameState.grid[i].location === gameState.searchBox) {
         if (playedOnThoseteams(teamsUsed, gameState, i)) {
           updatedPicture =
@@ -59,7 +59,7 @@ const useUpdatedGameGrid = (
       return cell;
     });
 
-    setGameState({ ...gameState, grid: updatedGrid });
+    setGameState({ ...gameState, searchBox: [0, 0], grid: updatedGrid });
   }, [gameState.playerIDSelected]);
 
   return {};

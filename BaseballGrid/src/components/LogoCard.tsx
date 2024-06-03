@@ -1,25 +1,21 @@
-import { gridComponent } from "../data/gridNumbers";
 import { Logo } from "../data/logoImages";
 import { Box, Image } from "@chakra-ui/react";
+import { sizes } from "./GameGrid";
 
 interface Props {
   image: Logo;
-  gridComponent: gridComponent;
 }
 
-const LogoCard = ({ gridComponent, image }: Props) => {
+const LogoCard = ({ image }: Props) => {
   return (
     <Box
       display="flex"
       justifyContent="center"
       alignItems="center"
-      sx={{
-        marginBottom: gridComponent.location[1] === 0 ? "20px" : undefined,
-        marginRight: gridComponent.location[0] === 0 ? "20px" : undefined,
-      }}
+      boxSize={sizes}
     >
       <Image
-        boxSize={{ base: "40px", sm: "66px", lg: "100px" }}
+        boxSize={{ base: "37px", sm: "50px", md: "90px", lg: "100px" }}
         src={image.image}
         alt={image.name}
       />

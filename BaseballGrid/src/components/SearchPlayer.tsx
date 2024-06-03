@@ -21,7 +21,6 @@ const SearchPlayer = ({ onClose }: Props) => {
 
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
-      console.log("click outside");
       onClose(); // Trigger the close action
     }
   };
@@ -30,7 +29,6 @@ const SearchPlayer = ({ onClose }: Props) => {
     const { value } = event.target;
     setIsTyping(value.length > 0);
     setTyped(value);
-    console.log(value);
   };
 
   useEffect(() => {

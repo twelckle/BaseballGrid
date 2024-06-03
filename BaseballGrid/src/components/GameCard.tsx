@@ -1,5 +1,5 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
-import { AppContext, GameState } from "./GameGrid";
+import { AppContext, GameState, sizes } from "./GameGrid";
 import { useContext } from "react";
 
 interface Props {
@@ -29,7 +29,7 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
 
   let imageShown = "";
   let nameShown = "";
-  for (let i = 1; i < 16; i++) {
+  for (let i = 1; i < 20; i++) {
     if (gameState.grid[i].location === spot) {
       imageShown = gameState.grid[i].image;
       nameShown = gameState.grid[i].name;
@@ -39,11 +39,7 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
   return (
     <div>
       {imageShown !== "" ? (
-        <Box
-          height={{ base: "65px", sm: "80px", lg: "150px" }}
-          width={{ base: "65px", sm: "80px", lg: "150px" }}
-          position="relative"
-        >
+        <Box height={sizes} width={sizes} position="relative">
           <Image
             src={imageShown}
             objectFit={"contain"}
@@ -71,11 +67,13 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
             </Text>
           </Box>
         </Box>
+      ) : gameState.numberGuesses === 0 ? (
+        <Box bg={"#8c8c8c"} height={sizes} width={sizes} borderRadius={0} />
       ) : (
         <Box
           bg={searchBox === spot ? "yellow" : "#8c8c8c"}
-          height={{ base: "65px", sm: "90px", lg: "150px" }}
-          width={{ base: "65px", sm: "90px", lg: "150px" }}
+          height={sizes}
+          width={sizes}
           as={Button}
           borderRadius={0}
           onClick={handleClick}
