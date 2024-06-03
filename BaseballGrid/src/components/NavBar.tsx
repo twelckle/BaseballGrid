@@ -7,7 +7,7 @@ import { useState } from "react";
 import logo from "../assets/baseball-favicon.png";
 
 const NavBar = () => {
-  const iconsColor = "#4d9968";
+  const iconsColor = "white";
   const [help, setHelp] = useState(false);
   return (
     <>
