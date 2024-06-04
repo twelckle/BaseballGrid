@@ -40,6 +40,7 @@ const useUpdatedGameGrid = (
     let updatedLocation = -1;
     let updatedName = "";
     let correctGuess = 0;
+    let incorrectGuess = true;
     if (gameState.playerIDSelected === null) return;
     for (let i = 0; i < 20; i++) {
       if (gameState.grid[i].location === gameState.searchBox) {
@@ -51,6 +52,7 @@ const useUpdatedGameGrid = (
           updatedLocation = i;
           updatedName = gameState.playerName;
           correctGuess = 1;
+          incorrectGuess = false;
         }
         break;
       }
@@ -66,8 +68,8 @@ const useUpdatedGameGrid = (
     setGameState({
       ...gameState,
       correctGuesses: gameState.correctGuesses + correctGuess,
-      searchBox: [0, 0],
       grid: updatedGrid,
+      incorrectGuess: incorrectGuess,
     });
   }, [gameState.playerIDSelected]);
 

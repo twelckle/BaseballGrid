@@ -23,6 +23,7 @@ export interface GameState {
   grid: gridComponent[];
   numberGuesses: number;
   correctGuesses: number;
+  incorrectGuess: boolean;
 }
 
 interface AppContextType {
@@ -46,6 +47,7 @@ const GameGrid = ({ teamsUsed }: Props) => {
     grid: gridNumbers,
     numberGuesses: 9,
     correctGuesses: 0,
+    incorrectGuess: false,
   });
 
   useUpdatedGameGrid(gameState, setGameState, teamsUsed);

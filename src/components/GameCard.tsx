@@ -23,6 +23,7 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
       playerIDSelected: null,
       playerName: "",
       teams: [],
+      incorrectGuess: false,
     };
     onPush(newState);
   };
@@ -72,7 +73,13 @@ const GameCard = ({ searchBox, spot, onPush }: Props) => {
         <Box bg={"#8c8c8c"} height={sizes} width={sizes} borderRadius={0} />
       ) : (
         <Box
-          bg={searchBox === spot ? "yellow" : "#8c8c8c"}
+          bg={
+            searchBox === spot && gameState.incorrectGuess === false
+              ? "yellow"
+              : searchBox === spot && gameState.incorrectGuess === true
+              ? "red"
+              : "#8c8c8c"
+          }
           height={sizes}
           width={sizes}
           as={Button}
