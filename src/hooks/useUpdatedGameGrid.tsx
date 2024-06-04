@@ -22,7 +22,7 @@ const playedOnThoseteams = (
   for (let i = 0; i < gameState.teams.length; i++) {
     console.log(gameState.teams[i]);
     const checkingTeam = currentTeams(gameState.teams[i]);
-    if (checkingTeam == teamOne || checkingTeam == teamTwo) {
+    if (checkingTeam === teamOne || checkingTeam === teamTwo) {
       count++;
     }
   }

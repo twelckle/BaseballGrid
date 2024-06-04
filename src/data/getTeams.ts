@@ -72,7 +72,7 @@ const teamMappings: { [key: string]: string } = {
   };
 
 export const currentTeams = (team: string) => {
-    return teamMappings[team] || team;
+    return (teamMappings[team] || team);
 }
 
 export default getTeams;
