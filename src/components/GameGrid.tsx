@@ -36,7 +36,6 @@ export const AppContext = createContext<AppContextType | null>(null);
 //sizes of the boxes for the grid items
 export const sizes = { base: "55px", sm: "75px", md: "134px", lg: "150px" };
 const GameGrid = ({ teamsUsed }: Props) => {
-  console.log(teamsUsed);
   const [gameState, setGameState] = useState<GameState>({
     search: false,
     searchBox: [0, 0],

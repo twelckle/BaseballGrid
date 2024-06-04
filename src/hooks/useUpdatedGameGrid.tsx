@@ -8,11 +8,9 @@ const playedOnThoseteams = (
   gameState: GameState,
   i: number
 ): boolean => {
-  console.log("here" + gameState.grid[i].location);
   const teamLocations = locationMapping.get(
     JSON.stringify(gameState.grid[i].location)
   );
-  console.log(teamLocations);
   if (teamLocations === undefined) return false;
   const teamOne = logos[teamsUsed[teamLocations[0]]].name;
   const teamTwo = logos[teamsUsed[teamLocations[1]]].name;

@@ -52,9 +52,6 @@ export const getPlayer = ({ userInput }: Props) => {
       )
       .then((response) => {
         const players = response.data.people;
-        // console.log(players[0].stats[1].splits[0].season);
-        console.log("here");
-        // console.log(players[0].stats[1].splits[0].team.name);
         setPlayerInfo(players);
         setLoading(false);
       })
