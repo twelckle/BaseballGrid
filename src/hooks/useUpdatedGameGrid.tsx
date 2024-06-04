@@ -16,18 +16,18 @@ const playedOnThoseteams = (
   if (teamLocations === undefined) return false;
   const teamOne = logos[teamsUsed[teamLocations[0]]].name;
   const teamTwo = logos[teamsUsed[teamLocations[1]]].name;
-  console.log(teamOne);
-  console.log(teamTwo);
-  let count = 0;
+  let teamOneMatch = false;
+  let teamTwoMatch = false;
   for (let i = 0; i < gameState.teams.length; i++) {
-    console.log(gameState.teams[i]);
     const checkingTeam = currentTeams(gameState.teams[i]);
-    if (checkingTeam === teamOne || checkingTeam === teamTwo) {
-      count++;
+    if (checkingTeam === teamOne) {
+      teamOneMatch = true;
+    } else if (checkingTeam === teamTwo) {
+      teamTwoMatch = true;
     }
   }
 
-  return count === 2;
+  return teamOneMatch && teamTwoMatch;
 };
 
 const useUpdatedGameGrid = (
