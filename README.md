@@ -1,4 +1,4 @@
-# <a href="https://your-link-here.com" target="_blank">BaseballGrid</a>
+# <a href="https://baseball-grid.vercel.app/" target="_blank">BaseballGrid</a>
 
 <img src="./public/baseball-favicon.png" alt="BaseballGrid Logo" width="70" height="70">
 
