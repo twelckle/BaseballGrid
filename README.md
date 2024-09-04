@@ -4,7 +4,7 @@
 
 ## Overview
 
-**BaseballGrid** is a React-based game inspired by the popular baseball puzzle concept known as the Immaculate Grid. The game challenges users to fill out a 3x3 grid where each cell corresponds to a baseball player who has played for the teams indicated by the intersecting row and column headers.
+**Diamond Connections** is a React-based game inspired by the popular baseball puzzle concept known as the Immaculate Grid. The game challenges users to fill out a 3x3 grid where each cell corresponds to a baseball player who has played for the teams indicated by the intersecting row and column headers.
 
 ## Features
 
