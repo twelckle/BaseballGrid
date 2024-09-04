@@ -30,7 +30,7 @@ const NavBar = () => {
               whiteSpace="nowrap"
               color={"white"}
             >
-              BASEBALL GRID
+              DIAMOND CONNECTIONS
             </Text>
           </HStack>
         </div>
