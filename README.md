@@ -35,4 +35,4 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 
 ## Contact
 
-For any questions, feel free to reach out: **Name**: Theo Welckle, **Email**: [tlw9927@nyu.edu], **LinkedIn**: [Your LinkedIn Profile]([https://www.linkedin.com/](https://www.linkedin.com/in/thelonious-welckle/))
+For any questions, feel free to reach out: **Name**: Theo Welckle, **Email**: [tlw9927@nyu.edu], **LinkedIn**: [https://www.linkedin.com/in/thelonious-welckle/]
