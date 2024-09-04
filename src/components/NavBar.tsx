@@ -30,7 +30,7 @@ const NavBar = () => {
               whiteSpace="nowrap"
               color={"white"}
             >
-              DIAMOND CONNECTIONS
+              MLB Matchup Matrix
             </Text>
           </HStack>
         </div>

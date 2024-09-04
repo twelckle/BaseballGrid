@@ -47,7 +47,7 @@ const HelpDisplay = ({ setHelp }: Props) => {
                     as="b"
                     align="center"
                   >
-                    How to play Baseball Grid
+                    How to play MLB Matchup Matrix
                   </Text>
                   <IconButton
                     colorScheme="blue"
@@ -60,11 +60,10 @@ const HelpDisplay = ({ setHelp }: Props) => {
               <CardBody flex="1" overflowY="auto">
                 <VStack spacing={"50px"} align="left">
                   <Text fontSize="lg">
-                    Immaculate Grid Baseball is a fun and challenging game where
-                    you test your knowledge of Major League Baseball (MLB)
-                    teams. The objective is to fill in a 3x3 grid with the
-                    correct teams that meet the criteria set for each row and
-                    column.
+                    MLB Matchup Matrix is a fun and challenging game where you
+                    test your knowledge of Major League Baseball (MLB) teams.
+                    The objective is to fill in a 3x3 grid with the correct
+                    teams that meet the criteria set for each row and column.
                   </Text>
                   <Heading as="h2" size="lg">
                     Steps to Play:
