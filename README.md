@@ -11,15 +11,15 @@
 - **3x3 Grid System**: The grid features rows and columns labeled with different MLB teams. The objective is to name a player who has played for both teams at each intersection.
 - **Team and Player Verification**: The game utilizes data from the Major League Baseball (MLB) API to verify the accuracy of each player's team affiliations.
 - **Score Tracking**: Users can see how many correct guesses they've made, with the game keeping track of their progress as they attempt to complete the grid.
-- **Unlimited Play**: Unlike some daily puzzles, BaseballGrid can be played multiple times, offering endless combinations of team matchups.
+- **Unlimited Play**: Unlike some daily puzzles, Diamond Connections can be played multiple times, offering endless combinations of team matchups.
 - **Historical Insights**: The game helps users learn more about baseball history by challenging them to think of players who had significant careers across different teams.
-- **Inspired by Immaculate Grid**: BaseballGrid was developed as a personal project before the Immaculate Grid became a well-known game. It provides a similar but independent experience for baseball enthusiasts.
+- **Inspired by Immaculate Grid**: Diamond Connections was developed as a personal project before the Immaculate Grid became a well-known game. It provides a similar but independent experience for baseball enthusiasts.
 
 ## Installation
 
-To get started with the BaseballGrid project, follow these steps: Clone the repository by running 
-1) `git clone https://github.com/twelckle/BaseballGrid.git`
-2) navigate to the project directory with `cd BaseballGrid`
+To get started with the Diamond Connections project, follow these steps: Clone the repository by running 
+1) `git clone https://github.com/twelckle/Diamond-Connections.git`
+2) navigate to the project directory with `cd Diamond-Connections`
 3) install dependencies using `npm install`
 4) run the project with `npm start`.
 
