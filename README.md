@@ -31,10 +31,8 @@ Start the application, and you will be presented with a 3x3 grid. For each cell,
 
 Contributions are welcome! If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome. Fork the repository, create a new branch, make your changes, and submit a pull request.
 
-## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions, feel free to reach out: **Name**: Isaac Goldman, **Email**: [your-email@example.com], **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/)
+For any questions, feel free to reach out: **Name**: Theo Welckle, **Email**: [tlw9927@nyu.edu], **LinkedIn**: [Your LinkedIn Profile]([https://www.linkedin.com/](https://www.linkedin.com/in/thelonious-welckle/))
